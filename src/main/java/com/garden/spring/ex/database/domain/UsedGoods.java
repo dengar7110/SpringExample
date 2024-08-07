@@ -4,8 +4,7 @@ import java.time.LocalDateTime;
 
 // usedGoods의 한행의 정보를 모두 저장할 수 있는 객체를 위한 클래스
 // 테이블의 컬럼이름과 정확히 일치하는 이름의 멤버 변수 정의
-// domain ~~~~~~~
-
+// Domain, Entity
 public class UsedGoods {
 	
 	private int id;
