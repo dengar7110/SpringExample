@@ -10,17 +10,56 @@
  	
  		SELECT
 	 		`id`
-	 		,`storeId`
-	 		,`menu`
-	 		,`userName`
-	 		,`point`
-	 		,`createdAt`
-	 		,`updatedAt`
+	 		, `storeId`
+	 		, `menu`
+	 		, `userName`
+	 		, `point`
+	 		, `review`
+	 		, `createdAt`
+	 		, `updatedAt`
  		FROM
- 			`new_review`
+ 			 `new_review`
  		WHERE
- 			`id` = #{id};
+ 			 `id` = #{id};
  	</select>
  
- 
+	<insert id="insertReview" parameterType="map">
+		INSERT
+			`new_review`
+		(
+			`storeId`
+			, `menu`
+			, `userName`
+			, `point`
+			, `review`
+		)
+		VALUE
+		(
+			#{storeId}
+			, #{menu}
+			, #{userName}
+			, #{point}
+			, #{review}
+		)
+	</insert>
+	
+	<insert id="insertReviewByObject" parameterType="com.garden.spring.ex.mybatis.domain.Review">
+		INSERT
+			`new_review`
+		(
+			`storeId`
+			, `menu`
+			, `userName`
+			, `point`
+			, `review`
+		)
+		VALUE
+		(
+			#{storeId}
+			, #{menu}
+			, #{userName}
+			, #{point}
+			, #{review}
+		)
+	</insert>
  </mapper>
