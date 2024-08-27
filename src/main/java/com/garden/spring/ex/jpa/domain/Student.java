@@ -3,6 +3,7 @@ package com.garden.spring.ex.jpa.domain;
 import java.time.LocalDateTime;
 
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -41,6 +42,7 @@ public class Student {
 	@Column(name="createdAt")
 	private LocalDateTime createdAt;
 	
+	@UpdateTimestamp
 	@Column(name="updatedAt")
 	private LocalDateTime updatedAt;
 }
